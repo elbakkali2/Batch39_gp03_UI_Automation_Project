@@ -1,9 +1,11 @@
 package com.project_name.pages;
 
+import com.project_name.utilities.ConfigurationReader;
 import com.project_name.utilities.Driver;
- Melisa
 import org.openqa.selenium.WebDriver;
-
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
@@ -26,29 +28,16 @@ public class LoginPage {
         this.passwordInput.sendKeys(password);
         this.submitButton.click();
     }
+    public void loginAs(String role) {
+        String formattedRole = role.toLowerCase().replace(" ", "_");
+        String username = ConfigurationReader.getProperty(formattedRole + "_username");
+        String password = ConfigurationReader.getProperty(formattedRole + "_password");
 
+        if (username == null || password == null) {
+            throw new IllegalArgumentException("Missing credentials for role: " + role);
+        }
 
-    public LoginPage(){
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
-
-    @FindBy(id="prependedInput")
-    public WebElement userName;
-
-
-
-    @FindBy(id="prependedInput2")
-    public WebElement password;
-
-    @FindBy(name = "_submit")
-    public WebElement submit;
-
-
-    public void login(String userNameStr, String passwordStr) {
-        userName.sendKeys(userNameStr);
-        password.sendKeys(passwordStr);
-        submit.click();
-        // verification that we logged
+        login(username, password);
     }
 
 }
