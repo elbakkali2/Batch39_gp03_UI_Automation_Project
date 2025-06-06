@@ -5,8 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import javax.xml.xpath.XPath;
-
 public class US05_MKO_Page {
 
     public US05_MKO_Page() {
