@@ -1,6 +1,7 @@
 package com.project_name.step_definitions;
 
 import com.project_name.pages.LoginPage;
+import com.project_name.pages.LoginPage_Oussama;
 import com.project_name.utilities.ConfigurationReader;
 import com.project_name.utilities.Driver;
 import io.cucumber.java.en.*;
@@ -11,7 +12,7 @@ import org.openqa.selenium.WebElement;
 
 public class US02_Login_oussama {
 
-    LoginPage loginPage = new LoginPage();
+    LoginPage_Oussama loginPage = new LoginPage_Oussama();
 
     @Given("the user is on the login page")
     public void the_user_is_on_the_login_page() {
