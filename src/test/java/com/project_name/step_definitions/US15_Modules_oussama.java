@@ -8,6 +8,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class US15_Modules_oussama {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
 
         loginPage.login(ConfigurationReader.getProperty("userName"),
-                      ConfigurationReader.getProperty("password"));
+                      ConfigurationReader.getProperty("password")+ Keys.ENTER);
 
     }
 
