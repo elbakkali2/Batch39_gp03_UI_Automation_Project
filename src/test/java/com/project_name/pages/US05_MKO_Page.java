@@ -15,15 +15,13 @@ public class US05_MKO_Page {
     @FindBy(xpath = "//span[text()[normalize-space()='Sales']]")
     public WebElement salesButton;
 
-
     @FindBy(xpath = "(//span[text()[normalize-space()='Customers']])[2]")
     public WebElement customersButton;
-
 
     @FindBy(xpath = "//button[@accesskey='c']")
     public WebElement createButton;
 
-    @FindBy(xpath = "//input[@class='o_field_char o_field_widget o_input o_required_modifier']")
+    @FindBy(xpath = "(//input[contains(@id, 'o_field_input_')])[2]")
     public WebElement nameInputBox;
 
     @FindBy(xpath = "(//button[text()[normalize-space()='Save']])[1]")
