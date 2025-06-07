@@ -58,3 +58,23 @@ public class LoginPage {
 
 }
 
+
+
+    public void loginAs(String role) {
+        String formattedRole = role.toLowerCase().replace(" ", "_");
+        String username = ConfigurationReader.getProperty(formattedRole + "_username");
+        String password = ConfigurationReader.getProperty(formattedRole + "_password");
+
+        if (username == null || password == null) {
+            throw new IllegalArgumentException("Missing credentials for role: " + role);
+        }
+
+        login(username, password);
+    }
+
+}
+
+
+}
+
+
