@@ -12,6 +12,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class BrowserUtils {
 
@@ -232,11 +233,10 @@ public class BrowserUtils {
      *
      * @param locator
      * @param time
-     * @return
      */
-    public static WebElement waitForClickablility(By locator, int time) {
+    public static void waitForClickablility(By locator, int time) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(time));
-        return wait.until(ExpectedConditions.elementToBeClickable(locator));
+        wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
     /**
@@ -485,4 +485,36 @@ public class BrowserUtils {
     }
 
 
+    public static List<String> dropdownOptions_as_STRING(List<WebElement> elements) {
+        return elements.stream()
+                .map(WebElement::getText)
+                .filter(text->!text.trim().isEmpty())
+                .collect(Collectors.toList());
+    }
+
+    public static void clickModule(String subModule, String module) {
+        String moduleXPath = "//span[normalize-space(text())='" + module + "' and @class='oe_menu_text']";
+        String subModuleXPath = "//span[normalize-space(text())='" + subModule + "' and @class='oe_menu_text']";
+
+        try {
+            WebElement moduleElement = Driver.getDriver().findElement(By.xpath(moduleXPath));
+            BrowserUtils.waitForClickablility(moduleElement, 5);
+            moduleElement.click();
+        } catch (Exception e) {
+            System.out.println("Could not click on module: " + module);
+            e.printStackTrace();
+        }
+
+        try {
+            WebElement subModuleElement = Driver.getDriver().findElement(By.xpath(subModuleXPath));
+            BrowserUtils.waitForClickablility(subModuleElement, 5);
+            subModuleElement.click();
+        } catch (Exception e) {
+            System.out.println("Could not click on submodule: " + subModule);
+            e.printStackTrace();
+        }
+
+
+    }
 }
+
