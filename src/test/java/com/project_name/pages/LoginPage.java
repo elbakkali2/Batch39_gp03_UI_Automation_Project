@@ -4,17 +4,13 @@ import com.project_name.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 
 public class LoginPage {
 
     public LoginPage() {
         PageFactory.initElements(Driver.getDriver(), this);
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(submitButton));
+
     }
 
     @FindBy(id = "login")
@@ -40,11 +36,8 @@ public class LoginPage {
         emailInput.sendKeys(email);
         passwordInput.clear();
         passwordInput.sendKeys(password);
-    }
-
-    public void clickSubmit() {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(submitButton));
         submitButton.click();
     }
+
+
 }
