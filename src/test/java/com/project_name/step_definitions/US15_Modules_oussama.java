@@ -2,6 +2,7 @@ package com.project_name.step_definitions;
 
 import com.project_name.pages.DashboardPage;
 import com.project_name.pages.LoginPage;
+import com.project_name.pages.LoginPage_Oussama;
 import com.project_name.utilities.ConfigurationReader;
 import com.project_name.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -17,7 +18,7 @@ import static org.junit.Assert.assertTrue;
 
 public class US15_Modules_oussama {
 
-    LoginPage loginPage = new LoginPage();
+    LoginPage_Oussama loginPage = new LoginPage_Oussama();
 
     @Given("the user is logged in as an Event Manager")
     public void the_user_is_logged_in_as_an_event_manager() {
