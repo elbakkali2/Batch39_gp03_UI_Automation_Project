@@ -50,7 +50,7 @@ public class US15_Modules_oussama {
         assertEquals("Module count mismatch", expectedModules.size(), actualModules.size());
 
         // in this line i find problem with the size of the screen
-        // i can't see | Dashboards      |
+        // i can't see | Dashboards      | but if i move the browser to big screen it's pass
 
         for (String module : expectedModules) {
             assertTrue("Missing module: " + module, actualModules.contains(module));
