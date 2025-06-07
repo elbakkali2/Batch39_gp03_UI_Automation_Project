@@ -14,6 +14,7 @@ public class US013_AccessModules_StepDefinitions {
     @Given("the user is logged in as a POS Manager")
     public void theUserIsLoggedInAsAPOSManager() {
         mtHomePage.loginAsPOSManager();
+        mtHomePage.submitButton.click();
     }
 
     @When("the user navigates to the homepage")
@@ -24,13 +25,14 @@ public class US013_AccessModules_StepDefinitions {
     public void theUserShouldSeeTheFollowingModules() {
     }
 
-    @When("the user click on each module from the top menu")
-    public void theUserClickOnEachModuleFromTheTopMenu() {
+    @When("the user clicks on each module from the top menu")
+    public void theUserClicksOnEachModuleFromTheTopMenu() {
     }
 
     @Then("the corresponding page for each module should be displayed")
     public void theCorrespondingPageForEachModuleShouldBeDisplayed(){
 
     }
+
 
 }
