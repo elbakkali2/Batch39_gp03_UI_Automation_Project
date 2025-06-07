@@ -20,6 +20,15 @@ public class LoginPage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement submitButton;
 
+    @FindBy(partialLinkText = "Wrong login/password")
+    public WebElement WrongLoginPassword;
+
+    @FindBy (xpath = "//li[@class='o_user_menu']")
+    public WebElement userMenu;
+
+    @FindBy (xpath = "(//a[@href='#'])[7]")
+    public WebElement logout;
+
 
     public void login(String email, String password){
         this.emailInput.sendKeys(email);
