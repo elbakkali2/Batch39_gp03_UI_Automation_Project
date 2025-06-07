@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 
 public class US05_MKO_StepDefinitions extends US05_MKO_Page {
 
-    private static final Logger log = LoggerFactory.getLogger(US05_MKO_StepDefinitions.class);
+    //private static final Logger log = LoggerFactory.getLogger(US05_MKO_StepDefinitions.class);
     LoginPage loginPage = new LoginPage();
 
    /* @Given("user is on the login page")

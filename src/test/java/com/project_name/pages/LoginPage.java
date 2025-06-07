@@ -1,6 +1,10 @@
 package com.project_name.pages;
 
+import com.project_name.utilities.ConfigurationReader;
 import com.project_name.utilities.Driver;
+
+import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -13,8 +17,6 @@ public class LoginPage {
 
     public LoginPage() {
         PageFactory.initElements(Driver.getDriver(), this);
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(submitButton));
     }
 
     @FindBy(id = "login")
@@ -36,15 +38,8 @@ public class LoginPage {
     public WebElement logout;
 
     public void login(String email, String password){
-        emailInput.clear();
         emailInput.sendKeys(email);
-        passwordInput.clear();
         passwordInput.sendKeys(password);
-    }
-
-    public void clickSubmit() {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(submitButton));
         submitButton.click();
     }
 
@@ -64,5 +59,22 @@ public class LoginPage {
 }
 
 
+
+    public void loginAs(String role) {
+        String formattedRole = role.toLowerCase().replace(" ", "_");
+        String username = ConfigurationReader.getProperty(formattedRole + "_username");
+        String password = ConfigurationReader.getProperty(formattedRole + "_password");
+
+        if (username == null || password == null) {
+            throw new IllegalArgumentException("Missing credentials for role: " + role);
+        }
+
+        login(username, password);
+    }
+
 }
+
+
+}
+
 

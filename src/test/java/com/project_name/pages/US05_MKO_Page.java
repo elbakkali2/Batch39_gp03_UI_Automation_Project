@@ -15,10 +15,8 @@ public class US05_MKO_Page {
     @FindBy(xpath = "//span[text()[normalize-space()='Sales']]")
     public WebElement salesButton;
 
-
     @FindBy(xpath = "(//span[text()[normalize-space()='Customers']])[2]")
     public WebElement customersButton;
-
 
     @FindBy(xpath = "//button[@accesskey='c']")
     public WebElement createButton;
