@@ -4,11 +4,17 @@ import com.project_name.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class LoginPage {
 
     public LoginPage() {
-        PageFactory.initElements(Driver.getDriver(),this);
+        PageFactory.initElements(Driver.getDriver(), this);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(submitButton));
     }
 
     @FindBy(id = "login")
@@ -20,19 +26,25 @@ public class LoginPage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement submitButton;
 
-    @FindBy(partialLinkText = "Wrong login/password")
-    public WebElement WrongLoginPassword;
+    @FindBy(xpath = "//*[contains(text(), 'Wrong login/password')]")
+    public WebElement wrongLoginPassword;
 
-    @FindBy (xpath = "//li[@class='o_user_menu']")
+    @FindBy(xpath = "//li[contains(@class,'o_user_menu')]")
     public WebElement userMenu;
 
-    @FindBy (xpath = "(//a[@href='#'])[7]")
+    @FindBy(xpath = "(//a[@href='#'])[7]")
     public WebElement logout;
 
-
     public void login(String email, String password){
-        this.emailInput.sendKeys(email);
-        this.passwordInput.sendKeys(password);
-        this.submitButton.click();
+        emailInput.clear();
+        emailInput.sendKeys(email);
+        passwordInput.clear();
+        passwordInput.sendKeys(password);
+    }
+
+    public void clickSubmit() {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(submitButton));
+        submitButton.click();
     }
 }
