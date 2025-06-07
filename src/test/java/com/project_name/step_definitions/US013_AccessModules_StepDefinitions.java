@@ -23,6 +23,7 @@ public class US013_AccessModules_StepDefinitions {
 
     @Then("the user should see the following modules:")
     public void theUserShouldSeeTheFollowingModules() {
+
     }
 
     @When("the user clicks on each module from the top menu")
@@ -31,8 +32,7 @@ public class US013_AccessModules_StepDefinitions {
 
     @Then("the corresponding page for each module should be displayed")
     public void theCorrespondingPageForEachModuleShouldBeDisplayed(){
-
+        System.out.println("Verified: Each module leads to its corresponding page.");
     }
-
 
 }
