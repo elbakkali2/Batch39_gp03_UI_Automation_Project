@@ -27,8 +27,8 @@ public class US14_Inv_Mng_Page extends LoginPage {
 
     public static List<String> getInventoryModules() {
 
-        Arrays dataTable = null;
-        List<String> expectedModules = Arrays.asList();
+
+        List<String> expectedModules = List.of();
         List<WebElement> moduleElements = Driver.getDriver().findElements(By.xpath("//*[@class='navbar-collapse collapse']//span[@class='oe_menu_text']"));
 
         List<String> moduleNames = new ArrayList<>();

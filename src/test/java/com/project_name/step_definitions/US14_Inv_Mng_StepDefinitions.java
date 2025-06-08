@@ -5,7 +5,7 @@ import com.project_name.utilities.BrowserUtils;
 import com.project_name.utilities.ConfigurationReader;
 import com.project_name.utilities.Driver;
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.And;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,13 +15,9 @@ import org.openqa.selenium.*;
 import java.util.List;
 
 public class US14_Inv_Mng_StepDefinitions {
-
     LoginPage loginPage = new LoginPage();
-    US14_Inv_Mng_Page invMngPage = new US14_Inv_Mng_Page();
-    private DataTable dataTable;
 
     @Given("the user is logged in as an \"Inventory Manager\"")
-
     public void the_user_is_logged_in_as_an(String InventoryManager) {
         US14_Inv_Mng_Page.loginAsInvManager();
         LoginPage.submitButton.click();
