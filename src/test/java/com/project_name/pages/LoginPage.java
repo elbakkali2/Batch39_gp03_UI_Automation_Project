@@ -20,7 +20,12 @@ public class LoginPage {
     public WebElement passwordInput;
 
     @FindBy(xpath = "//button[@type='submit']")
+
+    public static WebElement submitButton;
+    
+
     public WebElement submitButton;
+
 
 
     public void login(String email, String password){
