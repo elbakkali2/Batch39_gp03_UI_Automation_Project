@@ -13,9 +13,9 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/project_name/step_definitions",
-        dryRun = false,
+        dryRun = true,
 
-        tags = "@POS",
+        //tags = "@POS",
 
         publish = true //generating a report with public link
 )
