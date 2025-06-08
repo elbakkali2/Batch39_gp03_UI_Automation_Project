@@ -1,12 +1,12 @@
 package com.project_name.pages;
 
 import com.project_name.utilities.Driver;
-import org.apache.xmlbeans.impl.xb.xsdschema.Public;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.ArrayList;
@@ -15,7 +15,6 @@ import java.util.List;
 
 public class US14_Inv_Mng_Page extends LoginPage {
 
-    WebElement modulesContainer = Driver.getDriver().findElement(By.xpath("//div[@id='modules-container']"));
 
 
     public US14_Inv_Mng_Page() {PageFactory.initElements(Driver.getDriver(), this);}
