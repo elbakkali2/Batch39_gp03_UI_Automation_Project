@@ -16,6 +16,7 @@ import java.util.List;
 
 public class US14_Inv_Mng_StepDefinitions {
     LoginPage loginPage = new LoginPage();
+    private DataTable dataTable;
 
     @Given("the user is logged in as an \"Inventory Manager\"")
     public void the_user_is_logged_in_as_an(String InventoryManager) {
