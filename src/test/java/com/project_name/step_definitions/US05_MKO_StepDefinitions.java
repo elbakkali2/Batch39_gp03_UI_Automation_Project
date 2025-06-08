@@ -4,14 +4,9 @@ import com.project_name.pages.LoginPage;
 import com.project_name.pages.US05_MKO_Page;
 import com.project_name.utilities.BrowserUtils;
 import com.project_name.utilities.ConfigurationReader;
-import com.project_name.utilities.Driver;
 import io.cucumber.java.en.And;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 
 public class US05_MKO_StepDefinitions extends US05_MKO_Page {
 
@@ -21,7 +16,7 @@ public class US05_MKO_StepDefinitions extends US05_MKO_Page {
    /* @Given("user is on the login page")
     public void user_is_on_the_login_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-    }*/
+    }*/ // we don't need this because there is already method inside the Hooks
    @And("user enters correct {string} and {string}")
    public void userEntersCorrectAnd(String email, String password) {
        loginPage.login(email,password);
@@ -48,7 +43,7 @@ public class US05_MKO_StepDefinitions extends US05_MKO_Page {
     public void the_information_of_the_customer_which_the_user_entered_should_be_displayed() {
         us05MkoPage.customersButton.click();
         BrowserUtils.sleep(4);
-        us05MkoPage.searchBox.sendKeys(ConfigurationReader.getProperty("jamieDone"));
+        us05MkoPage.searchBox.sendKeys(ConfigurationReader.getProperty("jamieDone") + Keys.ENTER);
         BrowserUtils.sleep(4);
         us05MkoPage.customerNamePage.click();
         System.out.println("us05MkoPage.customerNamePage.isDisplayed() = " + us05MkoPage.customerNamePage.isDisplayed());
