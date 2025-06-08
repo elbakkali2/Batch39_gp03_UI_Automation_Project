@@ -47,10 +47,6 @@ public class LoginPage {
 
 
 
-        loginAs(role);
-    }
-
-}
 
 
 

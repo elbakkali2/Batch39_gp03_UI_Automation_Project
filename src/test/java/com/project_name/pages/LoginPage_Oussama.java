@@ -37,9 +37,9 @@ public class LoginPage_Oussama {
     public WebElement logout;
 
     public void login(String email, String password){
-        emailInput.clear();
+
         emailInput.sendKeys(email);
-        passwordInput.clear();
+
         passwordInput.sendKeys(password);
     }
 
@@ -49,17 +49,7 @@ public class LoginPage_Oussama {
         submitButton.click();
     }
 
-    public void loginAs(String role) {
-        String formattedRole = role.toLowerCase().replace(" ", "_");
-        String username = ConfigurationReader.getProperty(formattedRole + "_username");
-        String password = ConfigurationReader.getProperty(formattedRole + "_password");
 
-        if (username == null || password == null) {
-            throw new IllegalArgumentException("Missing credentials for role: " + role);
-        }
-
-        login(username, password);
-    }
 
 }
 
