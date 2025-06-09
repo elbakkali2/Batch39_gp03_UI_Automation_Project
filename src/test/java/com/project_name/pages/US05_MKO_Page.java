@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+
 public class US05_MKO_Page {
 
     public US05_MKO_Page() {
@@ -15,10 +16,8 @@ public class US05_MKO_Page {
     @FindBy(xpath = "//span[text()[normalize-space()='Sales']]")
     public WebElement salesButton;
 
-
     @FindBy(xpath = "(//span[text()[normalize-space()='Customers']])[2]")
     public WebElement customersButton;
-
 
     @FindBy(xpath = "//button[@accesskey='c']")
     public WebElement createButton;
@@ -37,5 +36,7 @@ public class US05_MKO_Page {
 
     @FindBy(xpath = "//button[@class='btn btn-primary btn-sm o_form_button_edit']")
     public WebElement editButton;
+
+
 
 }
