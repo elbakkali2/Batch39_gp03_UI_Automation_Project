@@ -13,7 +13,7 @@ public class MT_HomePage extends LoginPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//a[contains(@class,'oe_menu_toggler')] | //a[contains(@class,'oe_menu_text')]")
+    @FindBy(xpath = "//li[@style='display: block;']")
     public List<WebElement> topMenuModules;
 
 
