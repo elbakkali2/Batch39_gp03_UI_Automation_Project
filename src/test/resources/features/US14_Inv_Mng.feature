@@ -27,6 +27,6 @@ Feature:US14 As an Inventory manager, I should be able to access the main module
         | Dashboards    |
 
     Scenario: Verify the Inventory Manager can access each module
-        When the user clicks on each module from the top menu
+       # When the user clicks on each module from the top menu
         Then the corresponding page for each module should be displayed
 

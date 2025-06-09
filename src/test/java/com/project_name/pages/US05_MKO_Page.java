@@ -13,7 +13,7 @@ public class US05_MKO_Page {
     }
 
 
-    @FindBy(xpath = "//span[text()[normalize-space()='Sales']]")
+    @FindBy(xpath = "(//span[text()[normalize-space()='Sales']])[1]")
     public WebElement salesButton;
 
     @FindBy(xpath = "(//span[text()[normalize-space()='Customers']])[2]")
