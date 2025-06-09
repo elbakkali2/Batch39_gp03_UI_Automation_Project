@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         glue = "com/project_name/step_definitions",
         dryRun = false,
 
-        tags = "@POS",
+        tags = "@MT",
 
         publish = true //generating a report with public link
 )
