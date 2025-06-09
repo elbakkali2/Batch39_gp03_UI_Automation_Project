@@ -14,7 +14,6 @@ public class US013_AccessModules_StepDefinitions {
     @Given("the user is logged in as a POS Manager")
     public void theUserIsLoggedInAsAPOSManager() {
         mtHomePage.loginAsPOSManager();
-        mtHomePage.submitButton.click();
     }
 
     @When("the user navigates to the homepage")
@@ -26,13 +25,13 @@ public class US013_AccessModules_StepDefinitions {
 
     }
 
-    @When("the user clicks on each module from the top menu")
-    public void theUserClicksOnEachModuleFromTheTopMenu() {
-    }
+//    @When("the user clicks on each module from the top menu")
+//    public void theUserClicksOnEachModuleFromTheTopMenu() {
+//    }
 
-    @Then("the corresponding page for each module should be displayed")
-    public void theCorrespondingPageForEachModuleShouldBeDisplayed(){
-        System.out.println("Verified: Each module leads to its corresponding page.");
-    }
+//    @Then("the corresponding page for each module should be displayed")
+//    public void theCorrespondingPageForEachModuleShouldBeDisplayed(){
+//        System.out.println("Verified: Each module leads to its corresponding page.");
+//    }
 
 }
