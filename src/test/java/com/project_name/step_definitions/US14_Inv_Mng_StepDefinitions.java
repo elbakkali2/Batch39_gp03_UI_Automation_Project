@@ -21,7 +21,6 @@ public class US14_Inv_Mng_StepDefinitions {
     @Given("the user is logged in as an \"Inventory Manager\"")
     public void the_user_is_logged_in_as_an() {
         US14_Inv_Mng_Page.loginAsInvManager();
-        LoginPage.submitButton.click();
 
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         loginPage.loginAs("Inventory Manager");
