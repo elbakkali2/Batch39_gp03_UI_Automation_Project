@@ -22,6 +22,15 @@ public class LoginPage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement submitButton;
 
+    @FindBy(xpath = "//*[contains(text(), 'Wrong login/password')]")
+    public WebElement wrongLoginPassword;
+
+    @FindBy(xpath = "//li[contains(@class,'o_user_menu')]")
+    public WebElement userMenu;
+
+    @FindBy(xpath = "(//a[@href='#'])[7]")
+    public WebElement logout;
+
 
     public void login(String email, String password){
         emailInput.sendKeys(email);

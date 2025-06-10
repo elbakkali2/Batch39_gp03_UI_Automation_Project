@@ -1,8 +1,9 @@
 Feature: US02. As a sales and expense manager, I want to login with valid credentials and get my account name.
-
+#  Background:
+#  Given the user is on the login page
   @oussama
   Scenario Outline: User logs in with valid credentials
-    Given the user is on the login page
+
     When the user enters valid "<username>" and "<password>"
     Then the user's account name should be displayed
 
@@ -12,9 +13,9 @@ Feature: US02. As a sales and expense manager, I want to login with valid creden
       | salesmanager10@info.com| salesmanager |
       | salesmanager43@info.com| salesmanager |
 
-  @oussama
+
   Scenario Outline: User logs in with invalid credentials
-    Given the user is on the login page
+#    Given the user is on the login page
     When the user enters invalid "<username>" or "<password>"
     Then the error message "Wrong login/password" should be displayed
 
@@ -23,9 +24,9 @@ Feature: US02. As a sales and expense manager, I want to login with valid creden
       | salesmanager@gmail.com| salesmanager |
       | salesmanager10@info.com| sale        |
 
-  @oussama
+
   Scenario Outline: User submits blank credentials
-    Given the user is on the login page
+#    Given the user is on the login page
     When the user leaves either the "<username>" or "<password>" field blank
     Then the browser should display the message "Please fill out this field."
 

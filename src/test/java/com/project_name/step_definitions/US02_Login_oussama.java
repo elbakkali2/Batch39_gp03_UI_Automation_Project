@@ -1,28 +1,25 @@
 package com.project_name.step_definitions;
 
 import com.project_name.pages.LoginPage;
-import com.project_name.pages.LoginPage_Oussama;
-import com.project_name.utilities.ConfigurationReader;
 import com.project_name.utilities.Driver;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 public class US02_Login_oussama {
 
-    LoginPage_Oussama loginPage = new LoginPage_Oussama();
+    LoginPage loginPage = new LoginPage();
 
-    @Given("the user is on the login page")
-    public void the_user_is_on_the_login_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-    }
+//    @Given("the user is on the login page")
+//    public void the_user_is_on_the_login_page() {
+////        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+//    }
 
     @When("the user enters valid {string} and {string}")
     public void the_user_enters_valid_and(String username, String password) {
         loginPage.login(username, password);
-        loginPage.clickSubmit();  // new method to wait and click submit
+//        loginPage.submitButton.click();  // new method to wait and click submit
 
     }
 
@@ -35,7 +32,7 @@ public class US02_Login_oussama {
     @When("the user enters invalid {string} or {string}")
     public void the_user_enters_invalid_or(String username, String password) {
         loginPage.login(username, password);
-        loginPage.clickSubmit();  // new method to wait and click submit
+//        loginPage.submitButton.click();  // new method to wait and click submit
 
     }
 
