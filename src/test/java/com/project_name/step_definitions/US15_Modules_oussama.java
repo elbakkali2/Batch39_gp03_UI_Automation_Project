@@ -21,10 +21,10 @@ public class US15_Modules_oussama {
 
     @Given("the user is logged in as an Event Manager")
     public void the_user_is_logged_in_as_an_event_manager() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+//        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
 
         loginPage.login(ConfigurationReader.getProperty("userName"),
-                      ConfigurationReader.getProperty("password")+ Keys.ENTER);
+                      ConfigurationReader.getProperty("password"));
 
     }
 
