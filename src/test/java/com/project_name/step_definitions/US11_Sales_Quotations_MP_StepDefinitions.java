@@ -3,6 +3,7 @@ package com.project_name.step_definitions;
 import com.project_name.pages.LoginPage;
 import com.project_name.pages.US11_Sales_Quot_MP_Page;
 import com.project_name.utilities.BrowserUtils;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -32,7 +33,7 @@ public class US11_Sales_Quotations_MP_StepDefinitions {
 
         BrowserUtils.waitForClickablility(sales_Quot_MP_Page.salesButton, 10);
         sales_Quot_MP_Page.salesButton.click();
-        BrowserUtils.sleep(3);
+        BrowserUtils.sleep(2);
 
     }
     @When("user clicks the Quotation Number checkbox")
@@ -40,7 +41,7 @@ public class US11_Sales_Quotations_MP_StepDefinitions {
 
         BrowserUtils.waitForVisibility(sales_Quot_MP_Page.quotationNumberCheckbox, 10);
         sales_Quot_MP_Page.quotationNumberCheckbox.click();
-        BrowserUtils.sleep(3);
+        BrowserUtils.sleep(2);
 
 
 
@@ -57,4 +58,23 @@ public class US11_Sales_Quotations_MP_StepDefinitions {
     }
 
 
+    @Then("the Print dropdown should be visible")
+    public void thePrintDropdownShouldBeVisible() {
+
+
+        BrowserUtils.waitForVisibility(sales_Quot_MP_Page.printButton, 10);
+        Assert.assertTrue(sales_Quot_MP_Page.printButton.isDisplayed());
+        sales_Quot_MP_Page.printButton.click();
+        BrowserUtils.sleep(2);
+
+    }
+
+    @And("the option Quotation \\/ Order  should appear under the Print dropdown")
+    public void theOptionQuotationOrderShouldAppearUnderThePrintDropdown() {
+
+        BrowserUtils.waitForVisibility(sales_Quot_MP_Page.quotationOrderOption, 10);
+        Assert.assertTrue(sales_Quot_MP_Page.quotationOrderOption.isDisplayed());
+        BrowserUtils.sleep(2);
+
+    }
 }
