@@ -23,5 +23,13 @@ public class US11_Sales_Quot_MP_Page {
     @FindBy(xpath = "//tbody//input[@type='checkbox']")
     public List<WebElement> rowCheckboxes;
 
+    @FindBy(xpath = "//button[normalize-space()='Print']")
+    public WebElement printButton;
+
+    @FindBy(xpath = "//button[normalize-space()='Print']/following-sibling::ul[@class='dropdown-menu']")
+    public WebElement quotationOrderOption;
+
+
+
 
 }
