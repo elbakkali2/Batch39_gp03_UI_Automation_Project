@@ -1,4 +1,4 @@
-Feature: View and search repair orders
+KFeature: View and search repair orders
 
   As a POS & Sales Manager,
   I want to access the Repairs page
