@@ -23,7 +23,7 @@ public class US01_Login_AC {
     Login_AC_Page loginPage = new Login_AC_Page();
 
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
-    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+
 
 
     //using the login button
