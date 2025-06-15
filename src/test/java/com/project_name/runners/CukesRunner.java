@@ -9,8 +9,14 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "html:target/cucumber-report.html"},
         features = "src/test/resources/features",
         glue = "com/project_name/step_definitions",
+  
+        dryRun = false,
+  
         tags = "@Nigar", // Optional
-        dryRun = false
+  
+        publish = true //generating a report with public link
+  
+        
 )
 public class CukesRunner {
 }
