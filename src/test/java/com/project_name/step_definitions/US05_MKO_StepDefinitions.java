@@ -5,6 +5,8 @@ import com.project_name.pages.US05_MKO_Page;
 import com.project_name.utilities.BrowserUtils;
 import com.project_name.utilities.ConfigurationReader;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import org.openqa.selenium.Keys;
 
 
@@ -17,7 +19,7 @@ public class US05_MKO_StepDefinitions extends US05_MKO_Page {
     public void user_is_on_the_login_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }*/ // we don't need this because there is already method inside the Hooks
-   @And("user enters correct {string} and {string}")
+   @Given("user enters correct {string} and {string}")
    public void userEntersCorrectAnd(String email, String password) {
        loginPage.login(email,password);
    }
@@ -27,6 +29,7 @@ public class US05_MKO_StepDefinitions extends US05_MKO_Page {
 
     @And("The user can create a new customer by filling only the Name input box and after clicking the save button.")
     public void the_user_can_create_a_new_customer_by_filling_only_the_name_input_box_and_after_clicking_the_save_button() {
+        BrowserUtils.sleep(5);
         us05MkoPage.salesButton.click();
         BrowserUtils.sleep(5);
         us05MkoPage.customersButton.click();
@@ -49,7 +52,7 @@ public class US05_MKO_StepDefinitions extends US05_MKO_Page {
         System.out.println("us05MkoPage.customerNamePage.isDisplayed() = " + us05MkoPage.customerNamePage.isDisplayed());
 
     }
-    @And("All the boxes entered information can be editable again after clicking any customer and then clicking the edit button.")
+    @Then("All the boxes entered information can be editable again after clicking any customer and then clicking the edit button.")
     public void all_the_boxes_entered_information_can_be_editable_again_after_clicking_any_customer_and_then_clicking_the_edit_button() {
         us05MkoPage.editButton.click();
         BrowserUtils.sleep(4);
