@@ -3,6 +3,7 @@ package com.project_name.step_definitions;
 import com.project_name.pages.CalendarPage;
 import com.project_name.pages.DashboardPage;
 import com.project_name.pages.LoginPage;
+import com.project_name.utilities.BrowserUtils;
 import com.project_name.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,7 +15,7 @@ public class US03_Calendar_StepDefinitions {
 
 
     LoginPage loginPage = new LoginPage();
-    DashboardPage dashboardPage=new DashboardPage();
+    DashboardPage dashboardPage = new DashboardPage();
     CalendarPage calendarPage = new CalendarPage();
 
 
@@ -32,19 +33,20 @@ public class US03_Calendar_StepDefinitions {
     public void user_navigates_to_the_calendar_page() {
 
         dashboardPage.calendarOption.click();
-
     }
+
     @Then("user selects the daily view option")
     public void user_selects_the_daily_view_option() {
 
         calendarPage.daylyOption.click();
-
     }
 
     @Then("user should see the calendar displayed in daily format")
     public void user_should_see_the_calendar_displayed_in_daily_format() {
 
+        BrowserUtils.verifyTitle("Meetings - Odoo");
     }
+
 
 
     @Then("user selects the weekly view option")
@@ -56,7 +58,9 @@ public class US03_Calendar_StepDefinitions {
     @Then("user should see the calendar displayed in weekly format")
     public void user_should_see_the_calendar_displayed_in_weekly_format() {
 
+        BrowserUtils.verifyTitle("Meetings - Odoo");
     }
+
 
 
     @Then("user selects the monthly view option")
@@ -68,6 +72,6 @@ public class US03_Calendar_StepDefinitions {
     @Then("user should see the calendar displayed in monthly format")
     public void user_should_see_the_calendar_displayed_in_monthly_format() {
 
+        BrowserUtils.verifyTitle("Meetings - Odoo");
     }
-
 }

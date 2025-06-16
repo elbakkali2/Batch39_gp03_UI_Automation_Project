@@ -22,6 +22,4 @@ public class CalendarPage {
     @FindBy(xpath = "//button[.='Month']")
     public WebElement monthlyOption;
 
-
-
 }
