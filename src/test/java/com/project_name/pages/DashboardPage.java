@@ -21,6 +21,9 @@ public class DashboardPage {
     @FindBy (id = "menu_more_container")
     public WebElement moreButton;
 
+    @FindBy(xpath = "//span[normalize-space()='Calendar']")
+    public WebElement calendarOption;
+
     public List<String> getDisplayedModules() {
         WebDriver driver = Driver.getDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));  // // wait helper for dynamic content
