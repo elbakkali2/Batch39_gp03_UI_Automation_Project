@@ -15,9 +15,9 @@ import org.junit.runner.RunWith;
   
         dryRun = false,
   
-        tags = "@MT", // Optional
+        tags = "", // Optional
   
-        publish = true //generating a report with public link
+        publish = true //generating a report with a public link
   
         
 )
